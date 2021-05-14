@@ -1,9 +1,10 @@
 #include "Damas.hpp"
 
 Damas::Damas() {
-	
 	int negras = 12;
 	int blancas = 12;
+	
+	
 }
 
 void Damas::preparar() {
@@ -14,90 +15,94 @@ void Damas::preparar() {
 
 	for(int i=0; i<8; i++) {
 		for(int j=0; j<8; j++) {
-			if( (i = 0) && ( j%2 == 0)){
-				tablero[i][j] = "O";
-			}else if( (i = 0) && ( j%2 != 0)){
-				tablero[i][j] = Casilla(NULL);
+			
+			//blancas
+			if( (i = 0) && ( j%2 == 0)) {
+				tablero[i][j] = new Casilla(new Pieza(true,false));
+			} else if( (i = 0) && ( j%2 != 0)) {
+				tablero[i][j] = new Casilla(NULL);
 			}
-			if( (i = 1) && ( j%2 != 0)){
-				tablero[i][j] = "O";
-			} else if( (i = 1) && ( j%2 == 0)){
+			if( (i = 1) && ( j%2 != 0)) {
+				tablero[i][j] = new Casilla(new Pieza(true,false));
+			} else if( (i = 1) && ( j%2 == 0)) {
+				tablero[i][j] = new Casilla(NULL);
+			}
+
+			if( (i = 2) && ( j%2 == 0)) {
+				tablero[i][j] = new Casilla(new Pieza(true,false));
+			} else if( (i = 2) && ( j%2 == 0)) {
 				tablero[i][j] = new Casilla(NULL);
 			}
 			
-			if( (i = 2) && ( j%2 == 0)){
-				tablero[i][j] = new Casilla(true);
-			}else if( (i = 2) && ( j%2 == 0)){
+			//lineas de  negras
+			if( (i = 5) && ( j%2 != 0)) {
+				tablero[i][j] = new Casilla(new Pieza(false,false));
+			} else if( (i = 5) && ( j%2 == 0)) {
+				tablero[i][j] = new Casilla(NULL);
+			}
+
+			if( (i = 6) && ( j%2 == 0)) {
+				tablero[i][j] = new Casilla(new Pieza(false,false));
+			} else if( (i = 6) && ( j%2 != 0)) {
+				tablero[i][j] = new Casilla(NULL);
+			}
+
+			if( (i = 7) && ( j%2 != 0)) {
+				tablero[i][j] = new Casilla(new Pieza(false,false));
+			} else if( (i = 7) && ( j%2 == 0)) {
 				tablero[i][j] = new Casilla(NULL);
 			}
 			
-			if( (i = 3) ){
+			//lineas de en medio vacias
+			if( (i = 3) ) {
 				tablero[i][j] = new Casilla(NULL);
 			}
-			
-			if( (i = 4) ){
-				tablero[i][j] = new Casilla(NULL);
-			}
-				
-			if( (i = 5) && ( j%2 != 0)){
-				tablero[i][j] = new Casilla(false);
-			}else if( (i = 5) && ( j%2 == 0)){
-				tablero[i][j] = new Casilla(NULL);
-			}
-			
-			if( (i = 6) && ( j%2 == 0)){
-				tablero[i][j] = new Casilla(false);
-			}else if( (i = 6) && ( j%2 != 0)){
-				tablero[i][j] = Casilla(NULL);
-			}
-			
-			if( (i = 7) && ( j%2 != 0)){
-				tablero[i][j] = new Casilla(new Pieza(false));
-			}else if( (i = 7) && ( j%2 == 0)){
+			if( (i = 4) ) {
 				tablero[i][j] = new Casilla(NULL);
 			}
 		}
 	}
-
 	
-
-
-
-
+	ImprimirMatriz();
 }
 
 
-Damas::LlenarMatriz(char*** matriz) {
-
+Damas::ImprimirMatriz() {
 	for(int i = 0; i<8; i++) {
 		for(int j=0; j<8; j++) {
-			*matriz [i][j] =' ';
-		}
-	}
-
-}
-
-Damas::ImprimirMatriz(char*** matriz) {
-	for(int j=0; j<8; j++) {
-		cout<<" "<<j;
-	}
-	cout<<endl;
-	for(int i = 0; i<8; i++) {
-		cout << i << " ";
-		for(int j=0; j<8; j++) {
-			cout << " "<<matriz[i][j];
+			cout<<"["<<tablero[i][j]->toString()<<"]";
 		}
 		cout<<endl;
 	}
 }
 
-void Damas::Movimiento(int x,int y){
+Damas::Movimiento(int entradaX,int entradaY,int salidaX, int salidaY) {
 	for(int i = 0; i<8; i++) {
-		
+		int auxI=0;
+		int auxJ=0;
 		for(int j=0; j<8; j++) {
+			//ficha blanca
+			/*
+			if((tablero[entradaX][entradaY]) == Pieza(true,false) ){
+				
+			}else if((tablero[entradaX][entradaY]) == Pieza(false,false) ){//ficha negra
+				
+			}else if((tablero[entradaX][entradaY]) == Pieza(true,true) ){//reina blanca
+				
+			}else if((tablero[entradaX][entradaY]) == Pieza(false,true) ){ // reina negra
+				
+			}
 			
+			if((trablero[salidaX][salidaY])  == NULL  ) {
+				if( (trablero[salidaX][salidaY] == tablero[entradaX-1][entradaY-1]) || (trablero[salidaX][salidaY] == tablero[entradaX-1][entradaY+1]) || (trablero[salidaX][salidaY] == tablero[entradaX+1][entradaY+1]) || (trablero[salidaX][salidaY] == tablero[entradaX+1][entradaY-1])    ) {
+
+				}
+			}else{
+				cout<<"Hay una ficha en esa posicion y no se puede avanzar hacia ese lugar!!";
+			}
+			
+			*/
 		}
-		
 	}
 }
 

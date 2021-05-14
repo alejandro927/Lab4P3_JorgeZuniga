@@ -1,17 +1,28 @@
 #include "Pieza.hpp"
 
-toString Pieza::Pieza(bool bandera)
-{
-	if(bandera == NULL){
-		cout<<" ";
-	}else if(bandera == true){
-		cout<<"O";
-	}else if(bandera == false){
-		cout<<"X";
-	}
-	
+Pieza::Pieza() {
 }
 
-Pieza::~Pieza()
-{
+Pieza::Pieza(bool bandera,bool reina) {
+	b = bandera;
+	r = reina;
+}
+
+string Pieza::toString(){
+	if(b == true) {
+		if(r) {
+			return "RO";
+		} else {
+			return "O";
+		}
+	} else if(b == false) {
+		if(r) {
+			return "RX";
+		} else {
+			return "X";
+		}
+	}
+}
+
+Pieza::~Pieza() {
 }

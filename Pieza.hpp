@@ -1,12 +1,18 @@
 #ifndef PIEZA_HPP
 #define PIEZA_HPP
-
+#include <iostream>
+#include <string>
+using namespace std;
 class Pieza
 {
 	public:
-		toString Pieza(bool);
+		Pieza();
+		Pieza(bool,bool);
 		~Pieza();
-	protected:
+		string toString();
+	private:
+		bool b;
+		bool r;
 };
 
 #endif

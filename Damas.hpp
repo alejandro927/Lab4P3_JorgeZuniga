@@ -5,15 +5,13 @@
 
 class Damas {
 	public:
-		void preparar();
 		Damas();
-		LlenarMatriz(char***);
-		ImprimirMatriz(char***);
-		
+		void preparar();
+		ImprimirMatriz();
 		bool Ganar(int,int);
-		void movimiento();
-		
+		Movimiento(int,int,int,int);
 		~Damas();
+		
 	private:
 		Casilla*** tablero;
 };

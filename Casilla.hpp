@@ -6,9 +6,14 @@ using namespace std;
 class Casilla
 {
 	public:
-		Casilla(Pieza);
+		
+		Casilla();
+		Casilla(Pieza*);
+		string toString();
 		~Casilla();
+		
 	private:
+	Pieza* p;
 };
 
 #endif
