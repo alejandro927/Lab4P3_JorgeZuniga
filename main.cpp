@@ -4,8 +4,9 @@
 
 int main(int argc, char** argv) {
 	Damas* d = new Damas();
-	d->preparar();
-	d->ImprimirMatriz();
+	d->Dam();
+	//d->preparar();
+	//d->ImprimirMatriz();
 	delete d;
 	return 0;
 }

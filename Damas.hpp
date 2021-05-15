@@ -5,7 +5,7 @@
 
 class Damas {
 	public:
-		Damas();
+		Dam();
 		void preparar();
 		void ImprimirMatriz();
 		bool Ganar(int,int);

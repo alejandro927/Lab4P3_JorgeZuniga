@@ -1,15 +1,16 @@
 #include "Damas.hpp"
 
-Damas::Damas() {
+Damas::Dam() {
 	int negras = 12;
 	int blancas = 12;
 	int entradaX,entradaY,salidaX,salidaY;
 
-	/*cout<<"Ingrese la posicion en x de la pieza que desea mover:"<<endl;
+	cout<<"Ingrese la posicion en x de la pieza que desea mover:"<<endl;
 	cin>>entradaX;
-*/
 
-
+	preparar();
+	ImprimirMatriz();
+	
 
 }
 
@@ -18,56 +19,6 @@ void Damas::preparar() {
 	for(int i=0; i<8; i++) {
 		tablero[i] = new Casilla*[8];
 	}
-	int contador=0;
-	/*
-	for(int i=0; i<8 ; i++) {
-		for(int j=0; j<8 ; j++) {
-
-			//blancas
-			/*if( (i == 0) && ( (j % 2) == 0) ) {
-				tablero[i][j] = new Casilla( new Pieza(true,false));
-			} else if( (i == 0) && ( (j % 2) != 0)) {
-				tablero[i][j] = new Casilla(NULL);
-			}
-			if( (i == 1) && ( (j % 2) != 0)) {
-				tablero[i][j] = new Casilla( new Pieza(true,false));
-			} else if( (i == 1) && ( (j % 2) == 0)) {
-				tablero[i][j] = new Casilla(NULL);
-			}
-
-			if( (i == 2) && ( (j % 2) == 0)) {
-				tablero[i][j] = new Casilla( new Pieza(true,false));
-			} else if( (i == 2) && ( (j % 2) == 0)) {
-				tablero[i][j] = new Casilla(NULL);
-			}
-			
-			
-			//lineas de en medio vacias
-			if( (i == 3) ) {
-				tablero[i][j] = new Casilla(NULL);
-			}
-			if( (i == 4) ) {
-				tablero[i][j] = new Casilla(NULL);
-			}
-
-			//lineas de  negras
-			if( (i == 5) && ( (j % 2) != 0)) {
-				tablero[i][j] = new Casilla(new Pieza(false,false));
-			} else if( (i == 5) && ( (j % 2) == 0)) {
-				tablero[i][j] = new Casilla(NULL);
-			}
-
-			if( (i == 6) && ( (j % 2) == 0)) {
-				tablero[i][j] = new Casilla(new Pieza(false,false));
-			} else if( (i == 6) && ( (j % 2) != 0)) {
-				tablero[i][j] = new Casilla(NULL);
-			}
-
-			if( (i == 7) && ( j%2 != 0)) {
-				tablero[i][j] = new Casilla(new Pieza(false,false));
-			} else if( (i == 7) && ( j%2 == 0)) {
-				tablero[i][j] = new Casilla(NULL);
-			}*/
 			
 			tablero[0][0] = new Casilla( new Pieza(true,false));
 			tablero[0][1] = new Casilla(NULL);
@@ -141,33 +92,17 @@ void Damas::preparar() {
 			tablero[7][6] = new Casilla(NULL);
 			tablero[7][7] = new Casilla( new Pieza(false,false));
 			
-			
-			
-			
-			
-			/*
-			
-			contador++;
-			
-		}
-			
-	}*/
-	
 	
 }
 
 
 void Damas::ImprimirMatriz() {
-	int contador=0;
 	for(int i = 0; i < 8 ; i++) {
 		for(int j=0; j < 8 ; j++) {
-			contador++;
 			cout << "[" << tablero[i][j]->toString() << "]" ;
-			//cout<<j;
 		}
 		cout<<endl;
 	}
-	cout<<endl<<contador<<endl;
 }
 
 Damas::Movimiento(int entradaX,int entradaY,int salidaX, int salidaY) {

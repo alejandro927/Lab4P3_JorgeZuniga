@@ -25,7 +25,7 @@ string Pieza::toString(){
 }
 
 void Pieza::setPieza(){
-	this->b = bandera;
+	//this->b = bandera;
 }
 
 bool Pieza:: getPieza() {
@@ -33,7 +33,7 @@ bool Pieza:: getPieza() {
 }
 
 void Pieza::setReina(){
-	this->b = bandera;
+	//this->r = reina;
 }
 
 bool Pieza:: getReina() {
