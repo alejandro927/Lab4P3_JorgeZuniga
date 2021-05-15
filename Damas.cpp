@@ -68,6 +68,7 @@ void Damas::preparar() {
 			} else if( (i == 7) && ( j%2 == 0)) {
 				tablero[i][j] = new Casilla(NULL);
 			}*/
+			
 			tablero[0][0] = new Casilla( new Pieza(true,false));
 			tablero[0][1] = new Casilla(NULL);
 			tablero[0][2] = new Casilla( new Pieza(true,false));
@@ -179,7 +180,7 @@ Damas::Movimiento(int entradaX,int entradaY,int salidaX, int salidaY) {
 			/*
 			if((tablero[entradaX][entradaY]) == Pieza(true,false) ){ 
 
-			}else if((tablero[entradaX][entradaY]) == Pieza(false,false) ){//ficha negra
+			}else if((tablero[entradaX][entradaY]). == Pieza(false,false) ){//ficha negra
 
 			}else if((tablero[entradaX][entradaY]) == Pieza(true,true) ){//reina blanca
 

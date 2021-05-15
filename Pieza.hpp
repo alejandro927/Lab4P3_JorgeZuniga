@@ -8,6 +8,10 @@ class Pieza
 	public:
 		Pieza();
 		Pieza(bool,bool);
+		bool getPieza();
+		void setPieza();
+		bool getReina();
+		void setReina();
 		~Pieza();
 		string toString();
 	private:
