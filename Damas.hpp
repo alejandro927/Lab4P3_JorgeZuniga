@@ -7,7 +7,7 @@ class Damas {
 	public:
 		Damas();
 		void preparar();
-		ImprimirMatriz();
+		void ImprimirMatriz();
 		bool Ganar(int,int);
 		Movimiento(int,int,int,int);
 		~Damas();
