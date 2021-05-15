@@ -24,20 +24,20 @@ string Pieza::toString(){
 	}
 }
 
-void Pieza::setPieza(){
-	//this->b = bandera;
-}
-
 bool Pieza:: getPieza() {
     return this->b;
 }
 
-void Pieza::setReina(){
-	//this->r = reina;
+void Pieza::setPieza(bool bandera) {
+    this->b = bandera;
 }
 
 bool Pieza:: getReina() {
     return this->r;
+}
+
+void Pieza::setReina(bool Reina) {
+    this->r = Reina;
 }
 
 

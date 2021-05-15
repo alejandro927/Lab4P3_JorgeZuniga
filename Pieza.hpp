@@ -9,9 +9,9 @@ class Pieza
 		Pieza();
 		Pieza(bool,bool);
 		bool getPieza();
-		void setPieza();
+		void setPieza(bool);
 		bool getReina();
-		void setReina();
+		void setReina(bool);
 		~Pieza();
 		string toString();
 	private:
